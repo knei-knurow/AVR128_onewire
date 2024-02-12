@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef AVR128_ONEWIRE_H_
-#define AVR128_ONEWIRE_H_
+#ifndef AVR128_ONEWIRE_H
+#define AVR128_ONEWIRE_H 1
 
 #include <stdbool.h>
 #include <stdint.h>
@@ -26,11 +26,10 @@
 #define ONEWIRE_RECALL_E2 0xB8
 #define ONEWIRE_READ_POWER_SUPPLY 0xB4
 
-void OneWire_ResetPulse();
-bool OneWire_DetectPresence();
-void OneWire_WriteData(uint64_t data, uint8_t bytes);
-void OneWire_ReadData(uint8_t bytes);
+bool OneWire_ResetPulse();
+void OneWire_WriteBit(uint8_t bit);
+void OneWire_WriteByte(uint8_t byte);
+uint8_t OneWire_ReadBit();
+uint8_t OneWire_ReadByte();
 
-volatile uint8_t OneWire_Data[9];
-
-#endif /* AVR128_ONEWIRE_H_ */
+#endif /* AVR128_ONEWIRE_H */
