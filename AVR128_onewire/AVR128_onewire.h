@@ -7,7 +7,7 @@
 
 
 #ifndef AVR128_ONEWIRE_H
-#define AVR128_ONEWIRE_H 1
+#define AVR128_ONEWIRE_H 
 
 #include <stdbool.h>
 #include <stdint.h>

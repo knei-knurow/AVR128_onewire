@@ -24,21 +24,21 @@ bool OneWire_ResetPulse(){
 }
 
 void OneWire_WriteBit(uint8_t bit){
-	if(!bit){
+	if(bit){
 		PORTA.OUTCLR = PIN6_bm;
 		_delay_us(5);
 		PORTA.OUTSET = PIN6_bm;
-		_delay_us(55);
+		_delay_us(65);
 	}
 	else{
 		PORTA.OUTCLR = PIN6_bm;
-		_delay_us(55);
+		_delay_us(65);
 		PORTA.OUTSET = PIN6_bm;
 		_delay_us(5);
 	}
 }
 
-void OneWire_WriteData(uint8_t byte){
+void OneWire_WriteByte(uint8_t byte){
 	PORTA.OUTSET = PIN6_bm;
 	PORTA.DIRSET = PIN6_bm;
 	for (uint8_t i=0; i<8; i++){
