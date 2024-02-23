@@ -26,7 +26,7 @@ bool OneWire_ResetPulse(){
 void OneWire_WriteBit(uint8_t bit){
 	if(bit){
 		PORTA.OUTCLR = PIN6_bm;
-		_delay_us(5);
+		_delay_us(8);
 		PORTA.OUTSET = PIN6_bm;
 		_delay_us(65);
 	}
@@ -51,7 +51,7 @@ uint8_t OneWire_ReadBit(){
 	uint8_t retval;
 	PORTA.OUTCLR = PIN6_bm;
 	PORTA.DIRSET = PIN6_bm;
-	_delay_us(1);
+	_delay_us(3);
 	PORTA.DIRCLR = PIN6_bm;
 	_delay_us(10);
 	retval = (PORTA.IN & PIN6_bm) != 0;
